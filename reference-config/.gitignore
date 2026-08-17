@@ -1,0 +1,16 @@
+# Локальные выгрузки парсера каталога — в репозиторий не попадают
+storage/catalog/
+tools/catalog-parser/cache/
+
+# Зависимости и артефакты сборки
+vendor/
+node_modules/
+.phpunit.cache/
+
+# Окружение
+.env
+.env.*
+!.env.example
+
+# Личные настройки Claude Code (командные — в .claude/settings.json)
+.claude/settings.local.json

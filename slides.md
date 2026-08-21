@@ -546,11 +546,29 @@ steps:
   - run: claude -p "Проверь изменения по чеклисту project-review"
         --allowedTools "Read,Grep,Glob" --output-format json
     env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 ```
 
-Ключ — из секретов · права агента — **только чтение** ·
+Секрет — из репозитория · права агента — **только чтение** ·
 `permissions` — явно и по минимуму · никакого `pull_request_target`
+
+---
+
+# Подписка или API — в CI это разные секреты
+
+| Оплата | Секрет | Откуда |
+|--------|--------|--------|
+| Подписка (Pro/Max) | `CLAUDE_CODE_OAUTH_TOKEN` | `claude setup-token` |
+| API | `ANTHROPIC_API_KEY` | консоль Anthropic |
+
+> ⚠️ **Обе сразу задавать нельзя.** При наличии `ANTHROPIC_API_KEY`
+> приоритет у него — подписка молча не используется.
+
+Прогоны по подписке расходуют **её лимит** и конкурируют
+с вашей интерактивной работой
+
+→ регулярное ревью на каждый PR: предсказуемее отдельный API-ключ
+→ учебный проект и разовые прогоны: подписки достаточно
 
 ---
 

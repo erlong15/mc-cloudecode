@@ -9,6 +9,9 @@ in worker mode — no php-fpm, no FastCGI.
   runtime: FrankenPHP
 - `services/orders/` — cart and checkout, runtime: RoadRunner
 - `charts/ohmyclaude/` — Helm chart for Kubernetes
+- `docs/plan.md` — the approved implementation plan and readiness criteria;
+  the reference for what to build and when the work is done
+- `docs/research/` — findings that informed the code, kept as our own notes
 - `docs/adr/` — architecture decision records
 - `docs/architecture.md` — Mermaid diagrams
 - `docker-compose.yml` — local stack: both services, PostgreSQL, Redis

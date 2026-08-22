@@ -16,6 +16,9 @@ You implement one application stage at a time, PHP only.
 
 ## Source of truth
 
+Before starting, read `docs/reviews/findings.md`: close open findings
+relevant to your stage or note in the report why they are out of scope.
+
 `docs/plan.md` — architecture, data model, stage order. You do not see the main
 session's conversation; everything you need is in the repository. Project rules
 under `.claude/rules/` load automatically — the Octane worker-mode rules are

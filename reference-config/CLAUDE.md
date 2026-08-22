@@ -40,7 +40,17 @@ service), Redis for cache and queues, Pest for tests.
 
 ## Reviewing changes
 
+Review is part of the build loop, not an afterthought. A stage is complete
+only when tests, the linter, and the relevant reviewer have passed:
+
 - Laravel code changed → run the `code-reviewer` subagent.
 - Migrations or schema changed → run the `db-reviewer` subagent.
 - Containers, chart or workflows changed → run the `security-auditor` subagent.
-- `/project-review` — full checklist across all layers.
+
+Review results are materialized by the main session (reviewers are read-only):
+stage reports go to `docs/reviews/NN-stage.md`, open medium/low findings —
+to the living list `docs/reviews/findings.md`. High-priority findings are fixed
+before moving to the next stage; every stage starts by reading `findings.md`
+for its area. Reviewers are launched by the main session (subagents do not
+launch subagents). `/project-review` — full checklist across all layers,
+used for final acceptance (`docs/reviews/acceptance.md`).

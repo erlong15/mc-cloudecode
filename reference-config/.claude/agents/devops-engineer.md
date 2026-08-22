@@ -16,6 +16,9 @@ You implement one infrastructure stage at a time.
 
 ## Source of truth
 
+Before starting, read `docs/reviews/findings.md`: close open findings
+relevant to your stage or note in the report why they are out of scope.
+
 `docs/plan.md` plus the project rules (they load automatically):
 `containers.md` — pinned tags (`dunglas/frankenphp:1.12.7-php8.4-trixie`,
 `php:8.4-cli` + RoadRunner binary, `postgres:17`, `redis:7`), non-root,

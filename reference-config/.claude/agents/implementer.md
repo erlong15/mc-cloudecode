@@ -9,6 +9,9 @@ You implement exactly one stage of the plan, then stop.
 
 ## Source of truth
 
+Before starting, read `docs/reviews/findings.md`: close open findings
+relevant to your stage or note in the report why they are out of scope.
+
 `docs/plan.md` holds the architecture, data model, stage order and readiness
 criteria. Read it first. You do not see the main session's conversation —
 everything you need is in the repository: the plan, `CLAUDE.md`, and the rules

@@ -12,6 +12,7 @@ paths:
     (images are published under `dunglas/`, not `php/`).
   - RoadRunner service: `php:8.4-cli` plus the RoadRunner binary copied in with
     `COPY --from=ghcr.io/roadrunner-server/roadrunner:2025.1.15 /usr/bin/rr /usr/local/bin/rr`.
+  - Infrastructure in docker-compose is pinned too: `postgres:17`, `redis:7`.
 - Install extensions with `install-php-extensions`. Octane requires `pcntl`;
   PostgreSQL requires `pdo_pgsql`.
 - Run as a non-root user. Listen on a port at or above 1024 so no
